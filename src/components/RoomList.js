@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+
 
 class RoomList extends Component {
 	constructor(props) {
@@ -11,26 +11,34 @@ class RoomList extends Component {
 		
 		this.roomsRef = this.props.firebase.database().ref('rooms');
 		
+		}
+		
 		componentDidMount() {
 			this.roomsRef.on('child_added', snapshot => {
-				const room = snapshot.val(); 
-				room.key = snapshot.key; 
-				this.setState({ rooms: this.state.rooms.concat( room )});
+       			const room = snapshot.val();
+       			room.key = snapshot.key;
+       			this.setState({ rooms: this.state.rooms.concat( room ) })
 				 
-		};
+		});
 	
 		}
 	
 		
 		
 	render() {
+		const roomList = this.staate.rooms.map((room) =>
+			<li key={room.key}>{room.name}</li>
+		);
 		return (
-		
-		
-		
+			<ul>{roomList}</ul>
 		
 		);
+		
+	
+		
+		
+		
 	}
-
+}
 
 export default RoomList; 
