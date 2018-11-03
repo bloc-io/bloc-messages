@@ -4,8 +4,9 @@ import * as firebase from 'firebase';
 import RoomList  from './components/RoomList';
 
 
-var config = {
-	apiKey: "AIzaSyDVWXfO-dxsV_bA7OGXKZDG0gbmJW9jYHs",
+
+  var config = {
+    apiKey: "AIzaSyDVWXfO-dxsV_bA7OGXKZDG0gbmJW9jYHs",
     authDomain: "bloc-messages.firebaseapp.com",
     databaseURL: "https://bloc-messages.firebaseio.com",
     projectId: "bloc-messages",
@@ -14,18 +15,12 @@ var config = {
   };
   firebase.initializeApp(config);
 
+
 class App extends Component {
-	constructor(props){
-		super(props);
-		this.state= {
-			rooms: []
-		};
-	}
-
-
-  render() {
-    return (
-		<div className="App"> 
+	render() {
+    	return (
+			<div className="App"> 
+			
 			<h1 className="App-title">Bloc Chat</h1>
 			<main>
 				<RoomList firebase={firebase}/>
