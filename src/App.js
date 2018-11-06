@@ -4,7 +4,6 @@ import * as firebase from 'firebase';
 import RoomList  from './components/RoomList';
 
 
-
   var config = {
     apiKey: "AIzaSyDVWXfO-dxsV_bA7OGXKZDG0gbmJW9jYHs",
     authDomain: "bloc-messages.firebaseapp.com",
@@ -23,11 +22,9 @@ class App extends Component {
 			
 			<h1 className="App-title">Bloc Chat</h1>
 			<main>
-				<RoomList firebase={firebase}/>
+			<RoomList firebase={firebase}/>
 			</main>
-		
-		
-        </div>
+			</div>
     );
   }
 }
